@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -116,7 +119,7 @@ app.delete("/recipe/:id", (req, res) => {
 app.listen(port, () => {
   mongoose
     .connect(
-      "mongodb+srv://admin123:admin123@cluster0.bsbscwx.mongodb.net/?retryWrites=true&w=majority",
+      process.env.MONGO_URL,
       { useNewUrlParser: true, useUnifiedTopology: true }
     )
     .then(() => {
