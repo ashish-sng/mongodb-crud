@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe Details</title>
+  </head>
+  <body>
+    <h1>Recipe Details</h1>
+    <h2>Recipe Name: <%= recipe.receipeName %></h2>
+    <p>Recipe Time: <%= recipe.receipeTime %></p>
+    <p>Serves: <%= recipe.serves %></p>
+    <h3>Ingredients:</h3>
+    <ul>
+      <% recipe.ingredients.forEach(function(ingredient) { %>
+      <li><%= ingredient %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
